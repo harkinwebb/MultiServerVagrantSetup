@@ -34,8 +34,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #defining config for worker server 
   config.vm.define "workerServer" do |workerServer|
     workerServer.vm.box = "ubuntu/trusty64"
-	workerServer.vm.network :forwarded_port, guest: 80, host: 8082
-	workerServer.vm.network :forwarded_port, guest: 22, host: 2222
+	workerServer.vm.network :forwarded_port, guest: 80, host: 8083
+	workerServer.vm.network :forwarded_port, guest: 22, host: 2223
 	
 	workerServer.vm.provider :virtualbox do |vb|
       # Don't boot with headless mode
@@ -57,8 +57,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #defining config for application server 
   config.vm.define "appServer" do |appServer| 
     appServer.vm.box = "ubuntu/trusty64"
-	appServer.vm.network :forwarded_port, guest: 80, host: 8083
-	appServer.vm.network :forwarded_port, guest: 22, host: 2223
+	appServer.vm.network :forwarded_port, guest: 80, host: 8084
+	appServer.vm.network :forwarded_port, guest: 22, host: 2224
 	
 	appServer.vm.provider :virtualbox do |vb|
       # Don't boot with headless mode
